@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // JSON data
+        const data = [
+            {
+                "year": "1946",
+                "type": "Acquaintance rape",
+                "school": "Campbell University (formerly Campbell College High School)",
+                "city": "Buies Creek",
+                "state": "North Carolina",
+                "summary": "Louise Waddell (17) claims she was raped by Elton Cox (23) after she was walking to class near campus and was then forced into a car driven by Hoyte Sellers (19), friend of Cox. Car was driven to outskirts of Buies Creek, where she claims she was dragged out the car and forced to the ground by Cox who raped her. Waddell said she “repulsed advances made by Cox on the first date” and “it was pretty rough treatment for any girl to go through,” adding that she refused to date him anymore.",
+                "verdict": "Brief deliberation of jury found Elton Cox not guilty of intent to commit rape; Hoyte Sellers not guilty as accessory to rape."
+            },
+            {
+                "year": "1946",
+                "type": "Stranger rape",
+                "school": "Drake University",
+                "city": "Des Moines",
+                "state": "Iowa",
+                "summary": "Two coed Drake students [unnamed] were hitchhiking to Ottumwa (a 1.5hr trip from Drake campus) and accepted a truck ride Friday evening from two men, James Hartshorn (27) and George Bradford (20). The driver drove off the highway to a side road and one of the girls was able to flee and swim in a nearby river to safety. The other reported being assaulted. After the assault, the truck became stuck in the mud and the men and the girl had to walk. The men fell asleep after walking some distance and the woman fled and safely made it to Des Moines at 6:00 am the next morning to report the incident.",
+                "verdict": "Unknown at this time, attackers fled and remained on the run for an undetermined amount of time."
+            },
+            {
+                "year": "1946; 1964",
+                "type": "Stranger rape",
+                "school": "University of Detroit (now University of Detroit Mercy) and University of Missouri, Kansas City",
+                "city": "Detroit",
+                "state": "Michigan",
+                "summary": "Guy Brown (21), a football star and third-year student at U-D, was identified by two victims as a purse snatcher and alleged rapist. One victim, Shirley Winter (19), was a white co-ed at Wayne University, and the other victim, Augusta Cischke, was a white married mother. Brown was described as a “model student by his peers” and initially denied the allegations. However, evidence linked him to both crimes, leading to his eventual arrest and trial.",
+                "verdict": "Brown was found guilty and sentenced to prison for his crimes."
+            },
+            {
+                "year": "1960",
+                "type": "Attempted Stranger Rape",
+                "school": "Pan American College (now University of Texas–Pan American)",
+                "city": "Edinburg",
+                "state": "Texas",
+                "summary": "Rev. John B. Felt, a Catholic priest, was arrested and charged with assault with intent to commit rape. The girl was attacked from behind as she was at the communion rail alone, the attacker clamped a rag over her mouth and tried to attack her, but she managed to get free and bite the attacker on her thumb. Feit was later found to have an injury on his thumb, was seen fleeing from the church by a witness after the attack, and connected to the disappearance of another young woman who was last known to have given a confession to Rev. Feit. The woman who charged rape was noted as having questionable judgement because she waited at least a day before accusing Feit, on account that she was unsure of his identity and did not get a decent look at the attacker. Case was covered throughout the country.",
+                "verdict": "After a delayed trial and dozens of witnesses, a jury deadlocked and
